@@ -25,25 +25,18 @@ public class JogoDaVelha extends JFrame {
 	private String resultado = "";
 
 	public static void main(String[] args) {
-		/*
-		 * inicia todas as funções necessarias para conectar ao servidor e mostrar a
-		 * interface
-		 */
 		try {
 			JogoDaVelha frame = new JogoDaVelha();
 			frame.setVisible(true);
 			frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			frame.addWindowListener(new WindowAdapter() {
-				public void windowClosing(WindowEvent we) {
-					System.exit(0);
-				}
-			});
 		} catch (Exception e) {
-			// System.out.println(e+"b");
 		}
 	}
 
 	public JogoDaVelha() {
+		
+		/* layout */
+		
 		setTitle("Jogo da senhora idosa");
 		setBackground(Color.BLACK);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -329,6 +322,9 @@ public class JogoDaVelha extends JFrame {
 	}
 	
 	public void verificar() {
+		
+		/*verifica se tem algum vencedor ou se empatou */
+		
 		String x = String.valueOf(hashtag[2][2]) + String.valueOf(hashtag[1][1]) + String.valueOf(hashtag[0][0]);
 		String y = String.valueOf(hashtag[2][0]) + String.valueOf(hashtag[1][1]) + String.valueOf(hashtag[0][2]);
 		String z = String.valueOf(hashtag[2][0]) + String.valueOf(hashtag[2][1]) + String.valueOf(hashtag[2][2]);
@@ -382,6 +378,8 @@ public class JogoDaVelha extends JFrame {
 		}
 		
 		if(fim == 1) {
+			/*mostra o vencedor ou mensagem de empate */
+			
 			A9.setVisible(false);
 			A8.setVisible(false);
 			A7.setVisible(false);
