@@ -401,7 +401,6 @@ public class JogoDaVelha extends JFrame {
                    resultado +="\n";
 			}
 			JOptionPane.showMessageDialog(null,k+" Ganhou!\n "+resultado);
-			System.out.println("AAAAAAAA");
 		}
 	}
 }
