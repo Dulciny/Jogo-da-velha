@@ -37,7 +37,7 @@ public class JogoDaVelha extends JFrame {
 		
 		/* layout */
 		
-		setTitle("Jogo da senhora idosa");
+		setTitle("Jogo da Velha");
 		setBackground(Color.BLACK);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 468, 491);
