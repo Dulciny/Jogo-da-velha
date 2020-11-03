@@ -22,7 +22,7 @@ public class JogoDaVelha extends JFrame {
 	private JLabel T3, T2, T1, T4, T5, T6, T7, T8, T9;
 	private int jogada = 1, fim, soma = 0;
 	private char k;
-	private String resultado = "";
+	private String resultado = "", mostrar;
 
 	public static void main(String[] args) {
 		try {
@@ -59,6 +59,7 @@ public class JogoDaVelha extends JFrame {
 				} else
 					k = 'O';
 				hashtag[0][0] = k;
+				mostrar();
 				String x = String.valueOf(hashtag[0][0]);
 				T1.setText(x);
 				A1.setVisible(false);
@@ -79,6 +80,7 @@ public class JogoDaVelha extends JFrame {
 				} else
 					k = 'O';
 				hashtag[0][1] = k;
+				mostrar();
 				String x = String.valueOf(hashtag[0][1]);
 				T2.setText(x);
 				A2.setVisible(false);
@@ -99,6 +101,7 @@ public class JogoDaVelha extends JFrame {
 				} else
 					k = 'O';
 				hashtag[0][2] = k;
+				mostrar();
 				String x = String.valueOf(hashtag[0][2]);
 				T3.setText(x);
 				A3.setVisible(false);
@@ -119,6 +122,7 @@ public class JogoDaVelha extends JFrame {
 				} else
 					k = 'O';
 				hashtag[1][0] = k;
+				mostrar();
 				String x = String.valueOf(hashtag[1][0]);
 				T4.setText(x);
 				A4.setVisible(false);
@@ -139,6 +143,7 @@ public class JogoDaVelha extends JFrame {
 				} else
 					k = 'O';
 				hashtag[1][1] = k;
+				mostrar();
 				String x = String.valueOf(hashtag[1][1]);
 				T5.setText(x);
 				A5.setVisible(false);
@@ -159,6 +164,7 @@ public class JogoDaVelha extends JFrame {
 				} else
 					k = 'O';
 				hashtag[1][2] = k;
+				mostrar();
 				String x = String.valueOf(hashtag[1][2]);
 				T6.setText(x);
 				A6.setVisible(false);
@@ -179,6 +185,7 @@ public class JogoDaVelha extends JFrame {
 				} else
 					k = 'O';
 				hashtag[2][0] = k;
+				mostrar();
 				String x = String.valueOf(hashtag[2][0]);
 				T7.setText(x);
 				A7.setVisible(false);
@@ -199,6 +206,7 @@ public class JogoDaVelha extends JFrame {
 				} else
 					k = 'O';
 				hashtag[2][1] = k;
+				mostrar();
 				String x = String.valueOf(hashtag[2][1]);
 				T8.setText(x);
 				A8.setVisible(false);
@@ -218,6 +226,7 @@ public class JogoDaVelha extends JFrame {
 					k = 'X';
 				} else
 					k = 'O';
+				mostrar();
 				hashtag[2][2] = k;
 				String x = String.valueOf(hashtag[2][2]);
 				T9.setText(x);
@@ -311,14 +320,28 @@ public class JogoDaVelha extends JFrame {
 	}
 
 	public char round() {
+		
 		if (jogada == 1) {
 			jogada = 2;
 			return 'X';
-
 		} else {
 			jogada = 1;
 			return 'O';
 		}
+	}
+	
+	public void mostrar() {
+		for(int w = 0; w < hashtag.length; w++) {
+			for(int d = 0; d < hashtag[w].length; d++) {
+				String v = String.valueOf(hashtag[w][d]);
+				if(!"O".equals(v) && !"X".equals(v)) {
+					hashtag[w][d] = '-';
+				}
+//               System.out.print(hashtag[w][d] +" | ");
+			} 
+//			System.out.println("\n");
+		}
+//		System.out.println("\n\r");
 	}
 	
 	public void verificar() {
