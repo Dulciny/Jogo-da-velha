@@ -337,11 +337,11 @@ public class JogoDaVelha extends JFrame {
 				if(!"O".equals(v) && !"X".equals(v)) {
 					hashtag[w][d] = '-';
 				}
-//               System.out.print(hashtag[w][d] +" | ");
+               System.out.print(hashtag[w][d] +" | ");
 			} 
-//			System.out.println("\n");
+			System.out.println("\n");
 		}
-//		System.out.println("\n\r");
+		System.out.println("\n\r");
 	}
 	
 	public void verificar() {
@@ -397,7 +397,8 @@ public class JogoDaVelha extends JFrame {
 			T9.setForeground(Color.RED);
 			fim = 1;
 		}else if(soma == 8) {
-			JOptionPane.showMessageDialog(null, "Empate!");
+			JOptionPane.showMessageDialog(null, "Velha!");
+			System.exit(0);
 		}
 		
 		if(fim == 1) {
@@ -413,17 +414,18 @@ public class JogoDaVelha extends JFrame {
 			A2.setVisible(false);
 			A1.setVisible(false);
 			
-			for(int w = 0; w < hashtag.length; w++) {
-				for(int d = 0; d < hashtag[w].length; d++) {
-					String v = String.valueOf(hashtag[w][d]);
-					if(!"O".equals(v) && !"X".equals(v)) {
-						hashtag[w][d] = '-';
-					}
-                    resultado += hashtag[w][d] + " | ";
-				} 
-                   resultado +="\n";
-			}
+//			for(int w = 0; w < hashtag.length; w++) {
+//				for(int d = 0; d < hashtag[w].length; d++) {
+//					String v = String.valueOf(hashtag[w][d]);
+//					if(!"O".equals(v) && !"X".equals(v)) {
+//						hashtag[w][d] = '-';
+//					}
+//                    resultado += hashtag[w][d] + " | ";
+//				} 
+//                   resultado +="\n";
+//			}
 			JOptionPane.showMessageDialog(null,k+" Ganhou!\n "+resultado);
+			System.exit(0);
 		}
 	}
 }
